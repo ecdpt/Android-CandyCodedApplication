@@ -4,13 +4,8 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.squareup.picasso.Picasso;
@@ -47,8 +42,15 @@ public class InfoActivity extends AppCompatActivity {
         }
     }
 
-    // ***
-    // TODO - Task 3 - Launch the Phone Activity
-    // ***
+    //
+    // Task 3 - Launch the Phone Activity
+    //
+    public void createPhoneIntent(View view){
+        Intent phoneIntent = new Intent(Intent.ACTION_DIAL);
+        Uri telephoneUri = Uri.parse("tel:0123456789");
+        phoneIntent.setData(telephoneUri);
+        startActivity(phoneIntent);
+
+    }
 
 }
